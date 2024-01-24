@@ -1,0 +1,43 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.art-generator {
+    @apply text-center mt-8;
+}
+
+.btn-generate {
+    @apply text-lg px-4 py-2 mb-4 cursor-pointer;
+}
+
+.art-canvas {
+    @apply grid grid-cols-5 gap-4 mt-4;
+}
+
+.art-canvas > div {
+    @apply h-16 rounded-md;
+}
+
+.btn-save {
+    @apply text-lg px-4 py-2 mb-4 cursor-pointer bg-blue-500 text-white rounded-md;
+}
+
+.btn-save:hover {
+    @apply bg-blue-600;
+}
+
+.favorites {
+    @apply mt-8;
+}
+
+.favorite-color {
+    @apply inline-block w-6 h-6 mr-2 rounded-md;
+}
+
+.btn-answer {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer;
+}
+
+.btn-answer:hover {
+    @apply bg-blue-600;
+}
