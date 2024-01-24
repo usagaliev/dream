@@ -1,39 +1,30 @@
 import {FC} from 'react';
-import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Link, Button, Toolbar, Typography} from "@mui/material";
+import {PathProps} from "../../types/types.ts";
 
-function MenuIcon() {
-	return null;
+
+interface NavigationProps {
+	navItems: PathProps[];
 }
 
-const Navigation:FC = () => {
-
-	const navItems = ['Home', 'About', 'Contact'];
+const Navigation: FC<NavigationProps> = ({navItems}) => {
 
 	return (
 		<div>
 			<AppBar component="nav">
 				<Toolbar>
-					<IconButton
-						color="inherit"
-						aria-label="open drawer"
-						edge="start"
-						// onClick={handleDrawerToggle}
-						sx={{ mr: 2, display: { sm: 'none' } }}
-					>
-						<MenuIcon />
-					</IconButton>
 					<Typography
 						variant="h6"
 						component="div"
-						sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+						sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
 					>
-						MUI
+						DREAM CREATOR
 					</Typography>
-					<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+					<Box sx={{display: {xs: 'none', sm: 'block'}}}>
 						{navItems.map((item) => (
-							<Button key={item} sx={{ color: '#fff' }}>
-								{item}
-							</Button>
+							<Link href={item.path} key={item.path}>
+								<Button sx={{ color: '#fff' }} key={item.path}>{item.name}</Button>
+							</Link>
 						))}
 					</Box>
 				</Toolbar>
