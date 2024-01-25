@@ -1,44 +1,35 @@
 import {FC} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import ArtGenerator from '../pages/ArtGenerator';
-import DreamComposer from "../components/DreamComposer";
-import {
-	createBrowserRouter,
-	RouterProvider,
-} from "react-router-dom";
-
+import DreamComposer from '../components/DreamComposer';
+import Navigation from '../components/Navigation';
+import {Button} from '@mui/material';
 import './index.css';
-import Navigation from "../components/Navigation";
-
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: (
-			<div>Hello World!</div>
-		),
-	},
-	{
-		path: "/art-generator",
-		element: <ArtGenerator/>,
-	},
-	{
-		path: "/dream-composer",
-		element: <DreamComposer/>,
-	},
-]);
 
 const App: FC = () => {
 	return (
-		<div className="App app-body-centered">
-			<Navigation navItems={[
-				{path: '/', name: 'Home'},
-				{path: '/art-generator', name: 'Art Generator'},
-				{path: '/dream-composer', name: 'Dream Composer'},
-			]}/>
-			<div className='mt-20'>
-				<RouterProvider router={router}/>
+		<Router>
+			<div className="App app-body-centered">
+				<Navigation>
+					<Link to="/">
+						<Button sx={{color: '#fff'}}>Home</Button>
+					</Link>
+					<Link to="/art-generator">
+						<Button sx={{color: '#fff'}}>Art Generator</Button>
+					</Link>
+					<Link to="/dream-composer">
+						<Button sx={{color: '#fff'}}>Dream Composer</Button>
+					</Link>
+				</Navigation>
+				<div className='mt-20'>
+					<Routes>
+						<Route path="art-generator" element={<ArtGenerator/>}/>
+						<Route path="dream-composer" element={<DreamComposer/>}/>
+						<Route path="/" index element={<div>Hello World!</div>}/>
+					</Routes>
+				</div>
 			</div>
-		</div>
-
+		</Router>
 	);
 };
 

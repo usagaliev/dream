@@ -1,16 +1,15 @@
-import {FC} from 'react';
-import {AppBar, Box, Link, Button, Toolbar, Typography} from "@mui/material";
-import {PathProps} from "../../types/types.ts";
+import {FC, ReactNode} from 'react';
+import {AppBar, Box, Button, Link, Toolbar, Typography} from "@mui/material";
 
 
 interface NavigationProps {
-	navItems: PathProps[];
+	children: ReactNode;
 }
 
-const Navigation: FC<NavigationProps> = ({navItems}) => {
+const Navigation: FC<NavigationProps> = ({children}) => {
 
 	return (
-		<div>
+		<>
 			<AppBar component="nav">
 				<Toolbar>
 					<Typography
@@ -18,18 +17,18 @@ const Navigation: FC<NavigationProps> = ({navItems}) => {
 						component="div"
 						sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
 					>
-						DREAM CREATOR
+						<Link href='/'>
+							<Button variant='text' style={{color: '#fff'}} sx={{touchAction: 'none'}}>
+								DREAMER
+							</Button>
+						</Link>
 					</Typography>
 					<Box sx={{display: {xs: 'none', sm: 'block'}}}>
-						{navItems.map((item) => (
-							<Link href={item.path} key={item.path}>
-								<Button sx={{ color: '#fff' }} key={item.path}>{item.name}</Button>
-							</Link>
-						))}
+						{children}
 					</Box>
 				</Toolbar>
 			</AppBar>
-		</div>
+		</>
 	);
 };
 

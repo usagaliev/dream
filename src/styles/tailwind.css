@@ -10,7 +10,7 @@
 }
 
 .art-generator {
-    @apply text-center mt-8;
+    @apply text-center mt-8 w-full;
 }
 
 .btn-generate {
@@ -18,7 +18,7 @@
 }
 
 .art-canvas {
-    @apply grid grid-cols-5 gap-4 mt-4;
+    @apply grid grid-cols-5 gap-4 mt-4 m-auto w-full;
 }
 
 .art-canvas > div {
