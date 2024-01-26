@@ -36,11 +36,13 @@
     "react-webcam": "^7.2.0",
     "redux": "^5.0.1",
     "sort-by": "^1.2.0",
-    "tesseract.js": "^5.0.4"
+    "tesseract.js": "^5.0.4",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "@vitejs/plugin-react": "^4.2.1",
