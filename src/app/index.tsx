@@ -5,6 +5,8 @@ import DreamComposer from '../components/DreamComposer';
 import Navigation from '../components/Navigation';
 import {Button} from '@mui/material';
 import './index.css';
+import Scanner from "../components/ScannerApp";
+import SplitBill from "../pages/SplitBill";
 
 const App: FC = () => {
 	return (
@@ -20,14 +22,19 @@ const App: FC = () => {
 					<Link to="/dream-composer">
 						<Button sx={{color: '#fff'}}>Dream Composer</Button>
 					</Link>
+					<Link to="/bill-splitter">
+						<Button sx={{color: '#fff'}}>Bill Splitter</Button>
+					</Link>
 				</Navigation>
 				<div className='mt-20'>
 					<Routes>
 						<Route path="art-generator" element={<ArtGenerator/>}/>
 						<Route path="dream-composer" element={<DreamComposer/>}/>
 						<Route path="/" index element={<div>Hello World!</div>}/>
+						<Route path='bill-splitter' element={<SplitBill/>}/>
 					</Routes>
 				</div>
+				<Scanner/>
 			</div>
 		</Router>
 	);
