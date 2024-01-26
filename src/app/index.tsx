@@ -5,7 +5,7 @@ import DreamComposer from '../components/DreamComposer';
 import Navigation from '../components/Navigation';
 import {Button} from '@mui/material';
 import './index.css';
-import Scanner from "../components/ScannerApp";
+// import Scanner from "../components/ScannerApp";
 import SplitBill from "../pages/SplitBill";
 
 const App: FC = () => {
@@ -31,10 +31,10 @@ const App: FC = () => {
 						<Route path="art-generator" element={<ArtGenerator/>}/>
 						<Route path="dream-composer" element={<DreamComposer/>}/>
 						<Route path="/" index element={<div>Hello World!</div>}/>
-						<Route path='bill-splitter' element={<SplitBill/>}/>
+						<Route path='bill-splitter' element={<SplitBill title='Раскидай счет'/>}/>
 					</Routes>
 				</div>
-				<Scanner/>
+				{/*<Scanner/>*/}
 			</div>
 		</Router>
 	);
