@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server/server.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -15,16 +16,27 @@
     "@mui/material": "^5.15.6",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "filepond": "^4.30.6",
+    "filepond-plugin-file-encode": "^2.1.14",
+    "filepond-plugin-image-exif-orientation": "^1.0.11",
+    "filepond-plugin-image-preview": "^4.6.12",
     "localforage": "^1.10.0",
+    "localtunnel": "^2.0.2",
     "match-sorter": "^6.3.3",
     "material-components-web": "^14.0.0",
+    "multer": "^1.4.5-lts.1",
     "openai": "^4.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-filepond": "^7.1.2",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
+    "react-webcam": "^7.2.0",
     "redux": "^5.0.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "tesseract.js": "^5.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
